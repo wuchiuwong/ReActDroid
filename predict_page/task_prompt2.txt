@@ -1,0 +1,41 @@
+You are an exceptional mobile app tester. The task is to determine which specific page of the app is experiencing a crash based on the user-reported issue. You need to comprehend the details about each page, including its name, displayed text, buttons, and input boxes. Subsequently, you should choose the page whose information closely matches the description of the crash, and answer the reason and confidence level (from 1 to 5) for your choice. This selection is represented in JSON format. Note that there is one and only one page that matches the crash description, so your selection should also be one and only one page! Below are some examples:
+
+Here is all the information for each page of the app, from page 1 to page 5:
+### page 1 ###
+name of page 1: card browser
+buttons on page 1: 'navigate up', 'question', 'add note'
+### page 2 ###
+name of page 2: user
+displayed text on page 2: 'get started'
+buttons on page 2: 'sign in'
+input boxs on page 2: 'email', 'password'
+### page 3 ###
+name of page 3: deck picker
+displayed text on page 3: 'create deck'
+buttons on page 3: 'create', 'cancel'
+### page 4 ###
+name of page 4: deck picker
+displayed text on page 4: 'export'
+buttons on page 4: 'ok', 'cancel'
+### page 5 ###
+name of page 5: deck picker
+displayed text on page 5: 'importing'
+buttons on page 5: 'ok', 'cancel'
+
+Report crash: While I import a deck, the app crashed.
+Q: Among the previously mentioned pages, which one corresponds to the page where the crash occurred?
+A:
+{
+    "Reason": "The display text on page 5 contains the word 'importing', which matches the 'import' in the reported issue.",
+    "Answer": 5,
+	"Confidence": 5
+}
+
+Report crash: The app crash when I login.
+Q: Among the previously mentioned pages, which one corresponds to the page where the crash occurred?
+A:
+{
+    "Reason": "The 'sign in' button on page 2 has the same meaning as the word 'login' in the reporting issue.",
+    "Answer": 2,
+	"Confidence": 4
+}
